@@ -73,10 +73,16 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = async (responses) => {
+	fs.writeFile('(new)README.md', generateMarkdown(responses), (err) => err && console.error(err));
+};
 
 // TODO: Create a function to initialize app
-function init() {}
-
+const init = async () => {
+	const responses = await inquirer.prompt(questions);
+	var license = responses.license;
+	await writeToFile(responses);
+	console.log('Generated new README.md');
+};
 // Function call to initialize app
 init();
