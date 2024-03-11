@@ -24,8 +24,7 @@ function renderLicenseBadge(license) {
   }
 };
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Renders the license section, but Empties the line if there is no license chosen
 const renderLicenseSection = (license) => {
   if(license == '') {
     return ''
@@ -38,7 +37,7 @@ Protected under the: ${license} ${renderLicenseBadge(license)}
   }
 };
 
-// TODO: Create a function to generate markdown for README
+// Generates the markdown based on users responses
 const generateMarkdown = (responses) => {
 return `# ${responses.title}
 
